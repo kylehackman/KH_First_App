@@ -9,22 +9,6 @@
 
 
     <TextView
-        android:id="@+id/playGameContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectanglebutton"
-        android:padding="10dp"
-        android:text="Content"
-        android:textColor="@color/black"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".25" />
-
-    <TextView
         android:id="@+id/playGameLowerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +19,8 @@
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/playGameContent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/playGameHigherButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".75" />
 
@@ -50,7 +35,8 @@
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/playGameContent"
+        app:layout_constraintLeft_toRightOf="@id/playGameLowerButton"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".75" />
 
@@ -67,3 +53,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".6" />
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:src="@drawable/teslaCyberTruck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".125"
+        app:layout_constraintWidth_percent="0.9" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

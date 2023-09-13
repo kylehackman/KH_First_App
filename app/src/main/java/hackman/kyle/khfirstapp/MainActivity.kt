@@ -3,6 +3,7 @@ package hackman.kyle.khfirstapp
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import hackman.kyle.khfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,33 +19,39 @@ class MainActivity : AppCompatActivity() {
 
         bindStartButton()
     }
-/**
+
+    /**
     override fun onStart() {
-        super.onStart()
+    super.onStart()
     }
 
     override fun onResume() {
-        super.onResume()
+    super.onResume()
     }
 
     override fun onPause() {
-        super.onPause()
+    super.onPause()
     }
 
     override fun onStop() {
-        super.onStop()
+    super.onStop()
     }
 
     override fun onDestroy() {
-        super.onDestroy()
+    super.onDestroy()
     }
 
-    **/
+     **/
 
     private fun bindStartButton() {
-        var count = 0
         binding.start.setOnClickListener {
-            binding.start.text = count++.toString()
+            navigateToGame()
+        }
+    }
+
+    private fun navigateToGame() {
+        supportFragmentManager.commit {
+            add(R.id.activityMain, PlayGameFragment())
         }
     }
 }
