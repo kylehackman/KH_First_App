@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mint_green"
+    android:background="@color/light_blue"
     tools:context=".MainActivity">
 
 
     <TextView
-        android:id="@+id/higher"
+        android:id="@+id/playGameContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rectanglebutton"
+        android:padding="10dp"
         android:text="Content"
         android:textColor="@color/black"
         android:textSize="28dp"
@@ -24,35 +25,37 @@
         app:layout_constraintVertical_bias=".25" />
 
     <TextView
-        android:id="@+id/higher2"
+        android:id="@+id/playGameLowerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button"
-        android:text="Higher!"
-        android:textColor="@color/black"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintRight_toLeftOf="@id/higher"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".75" />
-
-    <TextView
-        android:id="@+id/lower"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:padding="10dp"
         android:text="Lower"
         android:textColor="@color/black"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/higher"
+        app:layout_constraintRight_toLeftOf="@id/playGameContent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".75" />
 
     <TextView
-        android:id="@+id/decimal"
+        android:id="@+id/playGameHigherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:padding="10dp"
+        android:text="Higher"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/playGameContent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".75" />
+
+    <TextView
+        android:id="@+id/playGameValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="rand_var"
