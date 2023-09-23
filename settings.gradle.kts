@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "KH First App"
 include(":app")
+include(":logic")

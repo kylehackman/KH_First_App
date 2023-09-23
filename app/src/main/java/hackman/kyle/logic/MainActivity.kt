@@ -1,10 +1,12 @@
-package hackman.kyle.khfirstapp
+package hackman.kyle.logic
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import hackman.kyle.khfirstapp.R
 import hackman.kyle.khfirstapp.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 

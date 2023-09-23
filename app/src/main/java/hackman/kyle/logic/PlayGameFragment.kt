@@ -1,4 +1,4 @@
-package hackman.kyle.khfirstapp
+package hackman.kyle.logic
 
 import android.os.Bundle
 import android.view.LayoutInflater
