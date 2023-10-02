@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_start)
 
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToGame() {
         supportFragmentManager.commit {
-            add(R.id.activityMain, PlayGameFragment())
+            add(R.id.fragment_start, PlayGameFragment())
         }
     }
 }
