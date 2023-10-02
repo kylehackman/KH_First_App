@@ -1,4 +1,4 @@
-package hackman.kyle.logic
+package hackman.kyle.app
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,13 +14,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_start)
 
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
+        navigateToStart()
 
-        bindStartButton()
     }
+
+    private fun navigateToStart() {
+        supportFragmentManager.commit {
+            add(R.id.activityMain, StartFragment())
+        }
+    }
+
 
     /**
     override fun onStart() {
@@ -45,15 +51,5 @@ class MainActivity : AppCompatActivity() {
 
      **/
 
-    private fun bindStartButton() {
-        binding.start.setOnClickListener {
-            navigateToGame()
-        }
-    }
 
-    private fun navigateToGame() {
-        supportFragmentManager.commit {
-            add(R.id.fragment_start, PlayGameFragment())
-        }
-    }
 }

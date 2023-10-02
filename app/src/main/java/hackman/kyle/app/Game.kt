@@ -1,4 +1,4 @@
-package hackman.kyle.logic
+package hackman.kyle.app
 
 class Game {
     fun start(){

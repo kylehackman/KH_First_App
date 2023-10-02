@@ -5,18 +5,19 @@ object PlayGameViewModel {
     var price = RandomVariable.randVar()
     var score = 0
     var message = "Loser!"
+    val asset = DataBase.assets[0]
 
     fun clickLower() {
-        if (price > Asset.actualPrice) {
+        if (price > asset.actualPrice) {
             score++
         } else {
             NavigationViewModel.navigateTo(NavigationViewModel.Screen.END)
         }
     }
-}
+
 
     fun clickHigher() {
-        if (price < Asset.actualPrice) {
+        if (price < asset.actualPrice) {
             score++
         } else {
             NavigationViewModel.navigateTo(NavigationViewModel.Screen.END)
