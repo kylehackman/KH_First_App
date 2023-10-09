@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import hackman.kyle.khfirstapp.R
 import hackman.kyle.khfirstapp.databinding.FragmentPlayGameBinding
 
 class PlayGameFragment : Fragment() {
@@ -23,12 +25,25 @@ class PlayGameFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        bindLowerButton()
+    }
+
+    private fun bindLowerButton() {
+        binding.playGameLowerButton.setOnClickListener {
+            navigateToRecap()
+        }
     }
 
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun navigateToRecap() {
+        parentFragmentManager.commit {
+            add(R.id.fragment_play_game, RecapFragment())
+            addToBackStack("play")
+        }
     }
 
 }

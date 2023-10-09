@@ -40,6 +40,7 @@ class StartFragment : Fragment() {
     private fun navigateToGame() {
         parentFragmentManager.commit {
             add(R.id.fragment_start, PlayGameFragment())
+            addToBackStack("start")
         }
     }
 }

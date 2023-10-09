@@ -11,7 +11,7 @@ object PlayGameViewModel {
         if (price > asset.actualPrice) {
             score++
         } else {
-            NavigationViewModel.navigateTo(NavigationViewModel.Screen.END)
+            NavigationViewModel.navigateTo(NavigationViewModel.Screen.RECAP)
         }
     }
 
@@ -20,7 +20,7 @@ object PlayGameViewModel {
         if (price < asset.actualPrice) {
             score++
         } else {
-            NavigationViewModel.navigateTo(NavigationViewModel.Screen.END)
+            NavigationViewModel.navigateTo(NavigationViewModel.Screen.RECAP)
         }
     }
 
