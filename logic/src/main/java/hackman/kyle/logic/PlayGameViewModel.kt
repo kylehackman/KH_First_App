@@ -1,7 +1,7 @@
 package hackman.kyle.logic
 
 object PlayGameViewModel {
-    private var price = RandomVariable.randVar()
+    private var guessingPrice = RandomVariable.randVar()
     private var score = 0
 
     private var asset = Database.assets[0]
@@ -14,7 +14,7 @@ object PlayGameViewModel {
     val assetState = Observable(Database.assets[0])
 
     fun clickLower() {
-        if (price > asset.actualPrice) {
+        if (guessingPrice > asset.actualPrice) {
             winner()
         } else {
             loser()
@@ -22,7 +22,7 @@ object PlayGameViewModel {
     }
 
     fun clickHigher() {
-        if (price < asset.actualPrice) {
+        if (guessingPrice < asset.actualPrice) {
             winner()
         } else {
             loser()
