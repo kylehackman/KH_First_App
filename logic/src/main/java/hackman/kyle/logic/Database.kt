@@ -1,6 +1,6 @@
 package hackman.kyle.logic
 
-object DataBase {
+object Database {
     val assets: List<Asset> = listOf(
         Asset("asset1","TBD Tesla Cyber Truck","",39_900),
         Asset("asset2","2023 Jeep Grand Cherokee Trackhawk","",89_000),
