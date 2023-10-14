@@ -2,7 +2,14 @@ package hackman.kyle.logic
 
 object PlayGameViewModel {
     private var guessingPrice = RandomVariable.randVar()
+    val guessingPriceState = Observable(Database.assets[0])
+
     private var score = 0
+        set(value) {
+            field = value
+            scoreState.update(value)
+        }
+    val scoreState = Observable(score)
 
     private var asset = Database.assets[0]
         set(value) {

@@ -28,13 +28,28 @@ class PlayGameFragment : Fragment() {
         bindLowerButton()
         bindHigherButton()
         observeAsset()
+        observeScore()
+        observeGuessingPrice()
     }
 
     private fun observeAsset() {
         PlayGameViewModel.assetState.addObserver {
             val formattedPrice = "$" + DecimalFormat("#,###").format(it.actualPrice)
             binding.playGameValue.text = formattedPrice
-            // TODO update image, name (will have to create in fragment_play_game layout), score
+            binding.playGameName.text = it.name
+            binding.playGameImage.tag = it.imageURL
+        }
+    }
+
+    private fun observeScore() {
+        PlayGameViewModel.scoreState.addObserver {
+            binding.playGameScore.text = it.toString()
+        }
+    }
+
+    private fun observeGuessingPrice() {
+        PlayGameViewModel.guessingPriceState.addObserver {
+            binding.playGameScore.text = it.toString()
         }
     }
 
