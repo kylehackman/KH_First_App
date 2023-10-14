@@ -2,6 +2,10 @@ package hackman.kyle.logic
 
 object PlayGameViewModel {
     private var guessingPrice = RandomVariable.randVar()
+        set(value) {
+            field = value
+            guessingPriceState.update(value)
+        }
     val guessingPriceState = Observable(guessingPrice)
 
     private var score = 0
@@ -43,10 +47,17 @@ object PlayGameViewModel {
             assetIndex++
         }
         asset = Database.assets[assetIndex]
+        randGuessingPrice()
     }
 
     private fun loser() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RECAP)
+        score = 0
+        randGuessingPrice()
+    }
+
+    private fun randGuessingPrice() {
+        guessingPrice = RandomVariable.randVar()
     }
 
     private fun winner() {
