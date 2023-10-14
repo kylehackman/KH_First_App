@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_play_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Name"
+        android:text="Tesla Cyber Truck"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -25,17 +26,15 @@
         android:id="@+id/playGameScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:padding="10dp"
-        android:text="score"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintHorizontal_bias=".9" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="10" />
 
     <TextView
         android:id="@+id/playGameLowerButton"
@@ -70,10 +69,9 @@
         app:layout_constraintVertical_bias=".75" />
 
     <TextView
-        android:id="@+id/playGameValue"
+        android:id="@+id/playGameGuessingPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rand_var"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -81,8 +79,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".6" />
-
+        app:layout_constraintVertical_bias=".6"
+        tools:text="$100,000" />
 
     <ImageView
         android:id="@+id/playGameImage"
@@ -95,6 +93,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".125"
         app:layout_constraintWidth_percent="0.9" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

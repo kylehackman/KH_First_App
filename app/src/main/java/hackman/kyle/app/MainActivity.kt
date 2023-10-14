@@ -1,12 +1,13 @@
 package hackman.kyle.app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import hackman.kyle.khfirstapp.R
 import hackman.kyle.khfirstapp.databinding.ActivityMainBinding
-
+import hackman.kyle.logic.NavigationViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,17 +18,28 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
-        navigateToStart()
-
+        observeScreenState()
     }
 
-    private fun navigateToStart() {
-        supportFragmentManager.commit {
-            add(R.id.activityMain, StartFragment())
+    private fun observeScreenState() {
+        NavigationViewModel.screenState.addObserver {
+            Log.e("zzz", "screen $it")
+            val fragmentNavigateTo = when (it) {
+                NavigationViewModel.Screen.START -> StartFragment()
+                NavigationViewModel.Screen.PLAY_GAME -> PlayGameFragment()
+                NavigationViewModel.Screen.RECAP -> RecapFragment()
+            }
+            supportFragmentManager.commit {
+                add(R.id.activityMain, fragmentNavigateTo)
+            }
+
         }
     }
 
-
+    override fun onDestroy() {
+        NavigationViewModel.screenState.removeAllObservers()
+        super.onDestroy()
+    }
     /**
     override fun onStart() {
     super.onStart()
@@ -50,6 +62,5 @@ class MainActivity : AppCompatActivity() {
     }
 
      **/
-
 
 }

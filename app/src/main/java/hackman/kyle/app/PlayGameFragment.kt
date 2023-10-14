@@ -34,8 +34,6 @@ class PlayGameFragment : Fragment() {
 
     private fun observeAsset() {
         PlayGameViewModel.assetState.addObserver {
-            val formattedPrice = "$" + DecimalFormat("#,###").format(it.actualPrice)
-            binding.playGameValue.text = formattedPrice
             binding.playGameName.text = it.name
             binding.playGameImage.tag = it.imageURL
         }
@@ -49,7 +47,8 @@ class PlayGameFragment : Fragment() {
 
     private fun observeGuessingPrice() {
         PlayGameViewModel.guessingPriceState.addObserver {
-            binding.playGameScore.text = it.toString()
+            val formattedPrice = "$" + DecimalFormat("#,###").format(it)
+            binding.playGameGuessingPrice.text = formattedPrice
         }
     }
 

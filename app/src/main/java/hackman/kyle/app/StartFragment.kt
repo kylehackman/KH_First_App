@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
-import hackman.kyle.khfirstapp.R
 import hackman.kyle.khfirstapp.databinding.FragmentStartBinding
+import hackman.kyle.logic.StartViewModel
 
 class StartFragment : Fragment() {
     private var _binding: FragmentStartBinding? = null
@@ -33,14 +32,7 @@ class StartFragment : Fragment() {
 
     private fun bindStartButton() {
         binding.start.setOnClickListener {
-            navigateToGame()
-        }
-    }
-
-    private fun navigateToGame() {
-        parentFragmentManager.commit {
-            add(R.id.fragment_start, PlayGameFragment())
-            addToBackStack("start")
+            StartViewModel.clickStart()
         }
     }
 }
