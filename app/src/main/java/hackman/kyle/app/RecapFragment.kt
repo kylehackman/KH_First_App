@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
 import hackman.kyle.khfirstapp.databinding.FragmentRecapBinding
+import hackman.kyle.logic.RecapViewModel
 
 class RecapFragment : Fragment() {
     private var _binding: FragmentRecapBinding? = null
@@ -32,11 +32,7 @@ class RecapFragment : Fragment() {
 
     private fun bindBackButton() {
         binding.back.setOnClickListener {
-            navigateToStart()
+            RecapViewModel.clickBack()
         }
-    }
-
-    private fun navigateToStart() {
-        parentFragmentManager.popBackStack("start", POP_BACK_STACK_INCLUSIVE)
     }
 }
