@@ -1,7 +1,6 @@
 package hackman.kyle.app
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeScreenState() {
         NavigationViewModel.screenState.addObserver {
-            Log.e("zzz", "screen $it")
+          //  Log.e("zzz", "screen $it")
             val fragmentNavigateTo = when (it) {
                 NavigationViewModel.Screen.START -> StartFragment()
                 NavigationViewModel.Screen.PLAY_GAME -> PlayGameFragment()

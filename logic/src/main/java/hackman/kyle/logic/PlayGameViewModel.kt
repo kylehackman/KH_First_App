@@ -8,7 +8,7 @@ object PlayGameViewModel {
         }
     val guessingPriceState = Observable(guessingPrice)
 
-    private var score = 0
+    var score = 0
         set(value) {
             field = value
             scoreState.update(value)
@@ -52,7 +52,6 @@ object PlayGameViewModel {
 
     private fun loser() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RECAP)
-        score = 0
         randGuessingPrice()
     }
 

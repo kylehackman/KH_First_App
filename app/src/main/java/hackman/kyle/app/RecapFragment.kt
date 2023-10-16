@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import hackman.kyle.khfirstapp.databinding.FragmentRecapBinding
+import hackman.kyle.logic.PlayGameViewModel
 import hackman.kyle.logic.RecapViewModel
 
 class RecapFragment : Fragment() {
@@ -23,6 +24,13 @@ class RecapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bindBackButton()
+        observeScore()
+    }
+
+    private fun observeScore() {
+        PlayGameViewModel.scoreState.addObserver {
+            binding.scoreValue.text = it.toString()
+        }
     }
 
     override fun onDestroyView() {
