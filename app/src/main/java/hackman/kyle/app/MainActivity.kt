@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeScreenState() {
         NavigationViewModel.screenState.addObserver {
-          //  Log.e("zzz", "screen $it")
+            //  Log.e("zzz", "screen $it")
             val fragmentNavigateTo = when (it) {
                 NavigationViewModel.Screen.START -> StartFragment()
                 NavigationViewModel.Screen.PLAY_GAME -> PlayGameFragment()
