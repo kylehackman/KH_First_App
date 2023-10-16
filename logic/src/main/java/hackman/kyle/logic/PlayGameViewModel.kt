@@ -40,7 +40,7 @@ object PlayGameViewModel {
         }
     }
 
-    private fun nextAsset() {
+    fun nextAsset() {
         if (assetIndex >= Database.assets.size - 1) {
             assetIndex = 0
         } else {

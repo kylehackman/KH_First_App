@@ -9,9 +9,9 @@ object RecapViewModel {
         }
     val recapScoreState = Observable(recapScore)
 
-
     fun clickBack() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.PLAY_GAME)
         PlayGameViewModel.score = 0
+        PlayGameViewModel.nextAsset()
     }
 }
