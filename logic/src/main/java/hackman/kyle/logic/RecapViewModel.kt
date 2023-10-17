@@ -2,7 +2,7 @@ package hackman.kyle.logic
 
 object RecapViewModel {
 
-    var recapScore = PlayGameViewModel.score
+    private var recapScore = PlayGameViewModel.score
         set(value) {
             field = value
             recapScoreState.update(value)
