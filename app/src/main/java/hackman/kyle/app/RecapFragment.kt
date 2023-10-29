@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import hackman.kyle.khfirstapp.databinding.FragmentRecapBinding
-import hackman.kyle.logic.PlayGameViewModel
 import hackman.kyle.logic.RecapViewModel
 
 class RecapFragment : Fragment() {
