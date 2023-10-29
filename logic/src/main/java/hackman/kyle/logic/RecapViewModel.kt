@@ -12,6 +12,7 @@ object RecapViewModel {
     fun clickBack() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.PLAY_GAME)
         PlayGameViewModel.nextAsset()
+        PlayGameViewModel.resetScore()
     }
 
     fun setScore(score: Int) {

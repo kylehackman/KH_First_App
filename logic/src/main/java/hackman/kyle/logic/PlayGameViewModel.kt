@@ -53,9 +53,12 @@ object PlayGameViewModel {
 
     private fun loser() {
         RecapViewModel.setScore(score)
-        score = 0
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RECAP)
         randGuessingPrice()
+    }
+
+    fun resetScore() {
+        score = 0
     }
 
     private fun randGuessingPrice() {

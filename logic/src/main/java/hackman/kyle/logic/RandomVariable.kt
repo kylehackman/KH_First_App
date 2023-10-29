@@ -6,6 +6,6 @@ object RandomVariable {
 
     fun randVar(): Int {
         val randomGenerator = Random.Default
-        return randomGenerator.nextInt(5, 1000000)
+        return randomGenerator.nextInt(25000,500000 )
     }
 }
