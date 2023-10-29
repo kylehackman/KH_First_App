@@ -10,6 +10,7 @@ import hackman.kyle.logic.PlayGameViewModel
 import hackman.kyle.logic.RecapViewModel
 
 class RecapFragment : Fragment() {
+
     private var _binding: FragmentRecapBinding? = null
     private val binding get() = _binding!!
 
@@ -28,7 +29,7 @@ class RecapFragment : Fragment() {
     }
 
     private fun observeScore() {
-        PlayGameViewModel.scoreState.addObserver {
+        RecapViewModel.recapScoreState.addObserver {
             binding.scoreValue.text = it.toString()
         }
     }
