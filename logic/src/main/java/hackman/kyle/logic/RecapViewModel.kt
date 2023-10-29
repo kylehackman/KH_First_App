@@ -2,7 +2,7 @@ package hackman.kyle.logic
 
 object RecapViewModel {
 
-    private var recapScore = PlayGameViewModel.score
+    private var recapScore = 0
         set(value) {
             field = value
             recapScoreState.update(value)
@@ -11,7 +11,10 @@ object RecapViewModel {
 
     fun clickBack() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.PLAY_GAME)
-        PlayGameViewModel.score = 0
         PlayGameViewModel.nextAsset()
+    }
+
+    fun setScore(score: Int) {
+        recapScore = score
     }
 }
