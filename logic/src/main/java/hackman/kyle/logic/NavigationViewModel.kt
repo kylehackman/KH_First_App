@@ -16,4 +16,14 @@ object NavigationViewModel {
     fun navigateTo(nextScreen: Screen) {
         currentScreen = nextScreen
     }
+
+    fun shouldOverrideBackPressed() = currentScreen != Screen.START
+
+    fun onBackPressed() {
+        when (currentScreen) {
+            Screen.START -> Unit
+            Screen.PLAY_GAME -> navigateTo(Screen.START)
+            Screen.RECAP -> RecapViewModel.systemBack()
+        }
+    }
 }

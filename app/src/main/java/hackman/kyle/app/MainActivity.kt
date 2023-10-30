@@ -29,9 +29,10 @@ class MainActivity : AppCompatActivity() {
                 NavigationViewModel.Screen.RECAP -> RecapFragment()
             }
             supportFragmentManager.commit {
-                add(R.id.activityMain, fragmentNavigateTo)
+                if (it != NavigationViewModel.Screen.RECAP) {
+                    replace(R.id.activityMain, fragmentNavigateTo)
+                } else add(R.id.activityMain, fragmentNavigateTo)
             }
-
         }
     }
 
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         NavigationViewModel.screenState.removeAllObservers()
         super.onDestroy()
     }
+
     /**
     override fun onStart() {
     super.onStart()
@@ -62,4 +64,13 @@ class MainActivity : AppCompatActivity() {
 
      **/
 
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        if (NavigationViewModel.shouldOverrideBackPressed()) {
+            NavigationViewModel.onBackPressed()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }

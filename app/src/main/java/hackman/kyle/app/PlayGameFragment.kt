@@ -1,17 +1,17 @@
 package hackman.kyle.app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
-import hackman.kyle.khfirstapp.R
 import hackman.kyle.khfirstapp.databinding.FragmentPlayGameBinding
 import hackman.kyle.logic.PlayGameViewModel
 import java.text.DecimalFormat
 
 class PlayGameFragment : Fragment() {
+
     private var _binding: FragmentPlayGameBinding? = null
     private val binding get() = _binding!!
 
@@ -65,15 +65,11 @@ class PlayGameFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        Log.e("ZZZ", "PlayGameFragment onDestroyView")
         _binding = null
         PlayGameViewModel.assetState.removeAllObservers()
+        PlayGameViewModel.scoreState.removeAllObservers()
+        PlayGameViewModel.guessingPriceState.removeAllObservers()
         super.onDestroyView()
-    }
-
-    private fun navigateToRecap() {
-        parentFragmentManager.commit {
-            add(R.id.fragment_play_game, RecapFragment())
-            addToBackStack("play")
-        }
     }
 }

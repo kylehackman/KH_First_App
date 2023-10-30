@@ -1,6 +1,7 @@
 package hackman.kyle.app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +35,9 @@ class RecapFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        Log.e("ZZZ", "RecapFragment onDestroyView")
         _binding = null
+        RecapViewModel.recapScoreState.removeAllObservers()
         super.onDestroyView()
     }
 
