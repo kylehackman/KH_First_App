@@ -34,7 +34,7 @@ class PlayGameFragment : Fragment() {
     private fun observeAsset() {
         PlayGameViewModel.assetState.observe(this) {
             binding.playGameName.text = it.name
-            binding.playGameImage.tag = it.imageFileName
+            //TODO binding.playGameImage.setImageDrawable() = it.imageFileName
         }
     }
 
