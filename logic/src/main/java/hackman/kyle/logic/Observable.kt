@@ -13,6 +13,10 @@ class Observable<T>(initialValue: T) {
         observers.clear()
     }
 
+    fun removeObserver(observer: (T) -> Unit){
+        observers.remove(observer)
+    }
+
     fun update(value: T) {
         currentValue = value
         observers.forEach { observer ->
