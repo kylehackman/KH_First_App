@@ -2,7 +2,6 @@ package hackman.kyle.app
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +43,6 @@ class PlayGameFragment : Fragment() {
     private fun getAssetImage(fileName: String): Drawable? {
         val resources = requireContext().resources
         val resourceID = resources.getIdentifier(fileName, "drawable", requireContext().packageName)
-        Log.e("zzz","fileName: $fileName")
         return ResourcesCompat.getDrawable(resources, resourceID, null)
     }
 

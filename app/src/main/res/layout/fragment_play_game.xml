@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:background="@color/light_blue">
 
+    <ImageView
+        android:id="@+id/playGameImage"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:src="@drawable/tesla_cyber_truck"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playGameName"
+        app:layout_constraintWidth_percent="0.9" />
+
     <TextView
         android:id="@+id/playGameName"
         android:layout_width="wrap_content"
@@ -23,18 +33,18 @@
         app:layout_constraintVertical_bias="0" />
 
     <TextView
-        android:id="@+id/playGameScore"
+        android:id="@+id/playGameGuessingPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/playGameLowerButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:text="10" />
+        app:layout_constraintTop_toBottomOf="@id/playGameImage"
+        app:layout_constraintVertical_bias=".7"
+        tools:text="$100,000" />
 
     <TextView
         android:id="@+id/playGameLowerButton"
@@ -69,27 +79,17 @@
         app:layout_constraintVertical_bias=".75" />
 
     <TextView
-        android:id="@+id/playGameGuessingPrice"
+        android:id="@+id/playGameScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/playGameImage"
-        app:layout_constraintBottom_toTopOf="@id/playGameLowerButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias=".7"
-        tools:text="$100,000" />
-
-    <ImageView
-        android:id="@+id/playGameImage"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:src="@drawable/tesla_cyber_truck"
-        app:layout_constraintTop_toBottomOf="@id/playGameName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintWidth_percent="0.9" />
+        tools:text="10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
