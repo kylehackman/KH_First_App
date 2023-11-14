@@ -1,9 +1,12 @@
 package hackman.kyle.app
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import hackman.kyle.khfirstapp.databinding.FragmentPlayGameBinding
 import hackman.kyle.logic.PlayGameViewModel
@@ -34,8 +37,15 @@ class PlayGameFragment : Fragment() {
     private fun observeAsset() {
         PlayGameViewModel.assetState.observe(this) {
             binding.playGameName.text = it.name
-            //TODO binding.playGameImage.setImageDrawable() = it.imageFileName
+            binding.playGameImage.setImageDrawable(getAssetImage(it.imageFileName))
         }
+    }
+
+    private fun getAssetImage(fileName: String): Drawable? {
+        val resources = requireContext().resources
+        val resourceID = resources.getIdentifier(fileName, "drawable", requireContext().packageName)
+        Log.e("zzz","fileName: $fileName")
+        return ResourcesCompat.getDrawable(resources, resourceID, null)
     }
 
     private fun observeScore() {
