@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
         observeScreenState()
+       // Attempted to make layout account for device cutouts WindowCompat.setDecorFitsSystemWindows(window,false)
     }
 
     private fun observeScreenState() {
         NavigationViewModel.screenState.addObserver {
-            //  Log.e("zzz", "screen $it")
             val fragmentNavigateTo = when (it) {
                 NavigationViewModel.Screen.START -> StartFragment()
                 NavigationViewModel.Screen.PLAY_GAME -> PlayGameFragment()

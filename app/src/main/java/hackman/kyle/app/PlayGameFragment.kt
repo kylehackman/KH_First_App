@@ -17,9 +17,7 @@ class PlayGameFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPlayGameBinding.inflate(inflater, container, false)
         return binding.root
@@ -31,8 +29,18 @@ class PlayGameFragment : Fragment() {
         observeAsset()
         observeScore()
         observeGuessingPrice()
+        //handleCutouts()
     }
-
+/* Attempted to make layout account for device cutouts
+    private fun handleCutouts() {
+        binding.root.setOnApplyWindowInsetsListener { view, insets ->
+            view.updatePadding(top = insets.stableInsetTop)
+            Log.e("zzz", "insets: ${insets.stableInsetTop}")
+            insets
+        }
+        binding.root.requestApplyInsets()
+    }
+*/
     private fun observeAsset() {
         PlayGameViewModel.assetState.observe(this) {
             binding.playGameName.text = it.name
