@@ -18,7 +18,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
         observeScreenState()
-       // Attempted to make layout account for device cutouts WindowCompat.setDecorFitsSystemWindows(window,false)
+        /*   Attempt to resolve device cutout
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                window.attributes.layoutInDisplayCutoutMode =
+                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+
+               }
+         */
     }
 
     private fun observeScreenState() {

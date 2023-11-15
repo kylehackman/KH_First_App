@@ -29,18 +29,24 @@ class PlayGameFragment : Fragment() {
         observeAsset()
         observeScore()
         observeGuessingPrice()
-        //handleCutouts()
+        /* Attempt to account for device cutout
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+             handleCutouts()
+             }
+         */
     }
-/* Attempted to make layout account for device cutouts
-    private fun handleCutouts() {
-        binding.root.setOnApplyWindowInsetsListener { view, insets ->
-            view.updatePadding(top = insets.stableInsetTop)
-            Log.e("zzz", "insets: ${insets.stableInsetTop}")
-            insets
+
+    /*   Attempt to account for device cutout
+        @RequiresApi(Build.VERSION_CODES.P)
+        private fun handleCutouts() {
+            binding.root.setOnApplyWindowInsetsListener { view, insets ->
+                insets.displayCutout?.safeInsetTop?.let { view.updatePadding(top = it) }
+                Log.e("zzz","${insets.displayCutout?.safeInsetTop}")
+                insets
+            }
+            binding.root.requestApplyInsets()
         }
-        binding.root.requestApplyInsets()
-    }
-*/
+    */
     private fun observeAsset() {
         PlayGameViewModel.assetState.observe(this) {
             binding.playGameName.text = it.name
